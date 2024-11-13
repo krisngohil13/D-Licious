@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/food_list_api.dart';
 import 'package:food_delivery/hotestitem.dart';
 import 'package:food_delivery/listoffood.dart';
 import 'package:food_delivery/main_pizza_order.dart';
+import 'package:food_delivery/order.dart';
 import 'package:food_delivery/order3rdscreen.dart';
 import 'package:food_delivery/scroll.dart';
 
@@ -95,7 +97,10 @@ class Menu2ndScreen extends StatelessWidget {
                             padding: EdgeInsets.only(
                                 top: 10, bottom: 10, right: 15, left: 15),
                             child: InkWell(
-                              onTap: () {},
+                              onTap: ()
+                              {
+
+                              },
                               child: Text(
                                 'View All',
                                 style: TextStyle(
@@ -121,11 +126,13 @@ class Menu2ndScreen extends StatelessWidget {
                 child: HomePage(),
               ),
               Container(
-                child: Column(
+                child:
+                Column(
                   children: [
                     Container(
                       padding: EdgeInsets.only(left: 30, right: 30),
-                      child: Row(
+                      child:
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -133,14 +140,20 @@ class Menu2ndScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
-                          InkWell(onTap: () {}, child: Text('View All')),
+                          InkWell(onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>  FoodListApi(),));
+    
+                          },
+                              child: Text('View All')),
                         ],
                       ),
                     ),
-                    Container(padding: EdgeInsets.only(left: 10,right: 25),
+                    Container(
+                      padding: EdgeInsets.only(left: 10,right: 25),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
-                        child: Row(
+                        child:
+                        Row(
                           children: [
                             ListFood(
                               dishname: 'Dosa',
@@ -185,56 +198,81 @@ class Menu2ndScreen extends StatelessWidget {
                   ],
                 ),
               ),
+        Container(
+          child: Column(
+            children: [
               Container(
-                child:
-                Column(
+                padding: EdgeInsets.only(left: 30, top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 30, top: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Hotest items',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 10),
-                            padding: EdgeInsets.only(
-                                left: 7, right: 7, top: 2, bottom: 2),
-                            child: Text(
-                              '46',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            decoration: BoxDecoration(
-                                color: Colors.orange[800],
-                                borderRadius: BorderRadius.circular(10)),
-                          ),
-                        ],
-                      ),
+                    Text(
+                      'Hotest items',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                        padding:  EdgeInsets.only(left: 30),
-                        child: Row(
-                          children: [
-                            HotestItem(
-                              dishname: 'Momos', press: (){}, imagesrc: 'assets/images/happy/Momos.png',),
-                            HotestItem(dishname: 'Momos', press: (){}, imagesrc: 'assets/images/happy/Momos.png',),
-                            HotestItem(dishname: 'Momos', press: (){}, imagesrc: 'assets/images/happy/Momos.png',),
-                            HotestItem(dishname: 'Momos', press: (){}, imagesrc: 'assets/images/happy/Momos.png',),
-                          ],
-                        ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.only(left: 7, right: 7, top: 2, bottom: 2),
+                      child: Text(
+                        '46',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
                       ),
+                      decoration: BoxDecoration(
+                          color: Colors.orange[800],
+                          borderRadius: BorderRadius.circular(10)),
                     ),
                   ],
                 ),
               ),
+              Container(
+                padding: EdgeInsets.only(left: 10, right: 25,bottom: 30),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      // Ensure that each HotestItem has a consistent size
+                      HotestItem(
+                        dishname: 'Momos',
+                        imagesrc: 'assets/images/happy/Momos.png',
+                        press: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)
+                          {
+                            return Order2ndScreen();
+                          },
+                          )
+                          );
+
+                        },
+                      ),
+                      HotestItem(
+                        dishname: 'Momos',
+                        press: () {},
+                        imagesrc: 'assets/images/happy/Momos.png',
+                      ),
+                      HotestItem(
+                        dishname: 'Momos',
+                        press: () {},
+                        imagesrc: 'assets/images/happy/Momos.png',
+                      ),
+                      HotestItem(
+                        dishname: 'Momos',
+                        press: () {},
+                        imagesrc: 'assets/images/happy/Momos.png',
+                      ),
+                      HotestItem(
+                        dishname: 'Momos',
+                        press: () {},
+                        imagesrc: 'assets/images/happy/Momos.png',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
             ],
           ),
         ),

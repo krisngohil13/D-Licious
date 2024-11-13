@@ -16,7 +16,8 @@ class ListFood extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
+    return
+      Container(
       margin: EdgeInsets.only(left: 15,  top: 20, bottom: 20),
       child: Column(
         children: [

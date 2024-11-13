@@ -11,6 +11,8 @@ class Ingredient {
   final List<Offset> positions;
 
   bool compare(Ingredient ingredient) => ingredient.image == image;
+
+
 }
 
 final ingredients = const <Ingredient>[

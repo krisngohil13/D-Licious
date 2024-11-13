@@ -22,11 +22,11 @@ class Login_First extends StatelessWidget {
                    Container(
                      child: Image.asset('assets/images/logo/Chef Logo.png',
                      ),
-                     margin: EdgeInsets.only(top: 100,bottom: 40),
+                     margin: EdgeInsets.only(top: 100,bottom: 30),
                      height: size.height*0.4,
                    ),
                    Container(
-                     padding: EdgeInsets.only(left: 40),
+                     padding: EdgeInsets.only(left: 40,top: 10),
                      child: Text(
                        'Cooking\nExperience\nLike a Chef',
                      style: TextStyle(
@@ -39,7 +39,7 @@ class Login_First extends StatelessWidget {
                    ),
                    Container(
                      padding: EdgeInsets.only(left: 40,top: 10),
-                     margin: EdgeInsets.only(bottom: 80),
+                     margin: EdgeInsets.only(bottom: 60),
                      child: Text(
                        'Let\'s make a delicious dish with the best\nrecipe for the family',
                        style: TextStyle(
